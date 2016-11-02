@@ -5,15 +5,15 @@ class Control{
         let idCasilla = e.id;
         let Ocoord = this.getOcoord();
         if(this.comprobarMov(idCasilla,Ocoord)){
-            
+            vista.cambiar(idCasilla,Ocoord);
         }
         if(this.ganar()){
             alert('Has ganado.');
         }
     }
     getOcoord(){
-        for (let i=0;i<(vista.listaDesor.length-1);i++){
-            for (let j=0;j<(vista.listaDesor.length-1);j++){
+        for (let i=0;i<(vista.listaDesor.length);i++){
+            for (let j=0;j<(vista.listaDesor.length);j++){
                 if (vista.listaDesor[i][j]==0){
                     return String(i) + String(j);
                 }
@@ -33,8 +33,8 @@ class Control{
     }
     ganar(){
         let x = 0;
-        for (let i=0;i<(vista.listaDesor.length-1);i++){
-            for (let j=0;j<(vista.listaDesor.length-1);j++){
+        for (let i=0;i<(vista.listaDesor.length);i++){
+            for (let j=0;j<(vista.listaDesor.length);j++){
                 if (vista.listaDesor[i][j] != x){
                     return false;
                 }
